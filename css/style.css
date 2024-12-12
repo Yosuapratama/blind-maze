@@ -1,0 +1,245 @@
+*  {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: black;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 600px;
+    background-color: black;
+}
+
+.intruction-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 35%;
+}
+
+input {
+    margin-top: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 60%;
+}
+#start {
+    padding: 10px 40px;
+    margin-top: 20px;
+    width: 70%;
+    background-color: #373daf;  
+    border: none;
+    color: #fff;
+
+  
+}
+#save-score {
+    font-weight: bold;
+    padding: 10px 40px;
+    margin-top: 20px;
+    /* width: 70%; */
+    background-color: #373daf;  
+    border: none;
+    color: #fff;
+}
+#restart {
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 10px 40px;
+    margin-top: 20px;
+    /* width: 70%; */
+    background-color: #373daf;  
+    border: none;
+    color: #fff;
+}
+#start:disabled {
+    cursor: not-allowed;
+}
+.flex {
+    display: flex;
+}
+.flex > button {
+    border: none;
+    margin: 10px;
+    background: none;
+    color: #373daf;
+    
+}
+#show-menu-instruction {
+    width: 70%;
+    height: 200px;
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border: 2px solid white;
+}
+.wrap-instruction {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+#close-instruction {
+    border: 1px solid white;
+    padding: 20px;
+    font-size: 20px;
+    right: 0;
+    top: 0;
+    position: absolute;
+    content: '';
+    background-color: black;
+    color: #fff;
+}
+.active {
+    display: flex !important;
+    transition: all .5s;
+}
+
+li {
+    font-size: 15px;
+    margin-top: 10px;
+}
+button:disabled {
+    opacity: .6;
+}
+button {
+    cursor: pointer;
+}
+.leaderboard-table {
+    display: none;
+}
+
+table tr td, th {
+    padding: 10px;
+}
+
+.container-board {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.box-item {
+    margin-top: 20px;
+    width: 420px;
+    flex-wrap: wrap;
+    display: flex;
+}
+.items{
+    height: 40px;
+    width: 40px;
+    border: 1px solid white;
+
+}
+.memorizing-time {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+
+}
+.roundArea {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+}
+.memorizing-box {
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 10px;
+}
+.gray {
+    background-color: #fafafa;
+}
+.player {
+    background-image: radial-gradient(red 50%, transparent 50%);
+}
+.win {
+    background-image: radial-gradient(yellow 50%, transparent 50%);
+}
+.heart-box {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+
+}
+.heart {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+
+}
+
+#hint {
+    background-color: red;
+    position: absolute;
+    right: 40px;
+    top: 70px;
+    border: none;
+    background: none;
+    color: #373daf;
+    font-size: 30px;
+}
+
+#gameover-menu {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 70%;
+    height: 200px;
+    position: absolute;
+    display: none;
+    color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 10px 0px;
+    border: 2px solid white;
+}
+.flex-item {
+    display: flex;
+}
+.flex-item > button{
+    padding: 10px;
+}
+.gameover-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.gameover-h1 {
+    margin-bottom: 20px;
+}

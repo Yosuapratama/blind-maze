@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind Maze Games</title>
+    <!-- Import Css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Wrap Body Pages -->
+    <div class="wrapper">
+        <!-- Container All Of Items -->
+        <div class="container">
+            <!-- Instruction Board -->
+            <div class="intruction-board">
+                <h1>Blind Maze</h1>
+                <input id="username" type="text" placeholder="Username...">
+                <button id="start">Start</button>
+                <!-- Set leaderboard and instruction popup -->
+                <div class="flex">
+                    <button id="LeaderBoard">LeaderBoard</button>
+                    <button id="show-instruction">Show Instruction</button>
+                </div>
+            </div>
+            <div class="leaderboard-table">
+                <div class="wrapper-leaderboard">
+                    <!-- Setup Leaderboard table -->
+                    <h4>LeaderBoard</h4>
+                    <table border="1" cellspacing="0" cellpadding="20">
+                        <!-- Setup Head of table -->
+                        <thead>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Stage</th>
+                        </thead>
+                        <!-- Setup Body Of Table -->
+                        <tbody class="tr-table">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Instruction Popup -->
+            <div id="show-menu-instruction">
+                <div class="wrap-instruction">
+                    <!-- Close Instruction Button -->
+                    <button id="close-instruction">X</button>
+                    <h1>Instruction</h1>
+                    <!-- Tutorial Detail for playing games -->
+                    <ol>
+                        <li>Input Your Name & Click Start Button</li>
+                        <li>Use the memorizing time to memorize the way that finish</li>
+                        <li>Move your character to the finish square without hitting wall</li>
+                        <li>Hitting the wall or runnning out of time will decrease the number of lives</li>
+                        <li>if you dont have live left, game over</li>
+                    </ol>
+                </div> 
+            </div>
+        
+            <!-- Setup New Container For board game -->
+            <div class="container-board">
+                <!-- Setup playername, time, board -->
+                <h1>BlindMaze</h1>
+                <!-- <p id="playername">Player Name : Beni</p> -->
+                <div class="memorizing-time">
+                    <div class="memorizing-box" id="memorize">Memorizing Time</div>
+                    <h2 id="seconds">10s</h2>
+                </div>
+                <div class="roundArea">Round : 1</div>
+                <div class="heart-box">
+                    <p id="heart-total">Heart : 3</p>
+                    <!-- <div class="heart"></div>
+                    <div class="heart"></div>
+                    <div class="heart"></div>
+                    <div class="heart"></div> -->
+                </div>
+                <button id="hint">Hint?</button>
+                <!-- Box of all items in game -->
+                <div class="box-item">
+                </div>
+            </div>
+        </div>
+
+        <!-- Gameover Screen -->
+        <div id="gameover-menu">
+            <div class="gameover-wrapper">
+                <!-- Close Gameober Button -->
+                <h1 class="gameover-h1">Gameover</h1>
+                <h1 id="usernameover">Username : </h1>
+                <h1 id="stageNum">Stage Number : </h1>
+                <div class="flex-item">
+                    <button id="save-score">Save Score</button>
+                    <button id="restart">Restart</button>
+                </div>
+                
+
+                <!-- Tutorial Detail for playing games -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Import Javascript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
