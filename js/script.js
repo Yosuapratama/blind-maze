@@ -164,6 +164,7 @@ class Game {
         this.generateWinArea(); //changetoplayer
         this.generateGrayBom();
 
+
     }
     resetAll() {
         document.querySelector('#memorize').innerHTML = 'Memorizing Time';
@@ -174,11 +175,11 @@ class Game {
         this.randBom = [];
         this.elem = [];
 
-        if(this.round > 10){
+        if (this.round > 10) {
             this.memorizeTime = 3;
-        }else if(this.round > 5){
+        } else if (this.round > 5) {
             this.memorizeTime = 6;
-        }else{
+        } else {
             this.memorizeTime = 10;
         }
         this.memorizeInit = true;
@@ -187,7 +188,8 @@ class Game {
         this.isFreezedTop = false;
         this.isFreezedBottom = false;
         this.isFreezedRight = false;
-        
+
+
 
         this.generateWinArea(); //changetoplayer
         this.generateGrayBom();
@@ -249,6 +251,8 @@ class Game {
                     document.getElementById(item).classList.remove('gray');
                 });
                 document.querySelector('#memorize').innerHTML = 'Move Time';
+                document.querySelector('#hint').style.display = 'block';
+
                 this.memorizeInit = false;
                 // clearInterval(this);
             }
@@ -332,22 +336,22 @@ class Game {
                 if (!this.memorizeInit) {
                     if (e.key === 'ArrowRight') {
                         this.rightAreaMax.map((area) => {
-                            if(area === this.player){
+                            if (area === this.player) {
                                 this.isFreezedRight = true;
                             }
                         });
 
-                        if(!this.isFreezedRight){
+                        if (!this.isFreezedRight) {
                             this.isFreezedLeft = false;
                             document.getElementById(this.player).classList.remove('player');
                             this.player = this.player + 1;
                             document.getElementById(this.player).classList.add('player');
-    
-    
+
+
                             this.checkWinner();
                             this.checkGameover();
                         }
-                      
+
 
                     } else if (e.key === 'ArrowLeft') {
                         this.leftArea.map((item) => {
@@ -410,19 +414,37 @@ class Game {
         });
 
         // Check Hit Button Clicked or not
+        // Check if the hint button was clicked
         document.querySelector('#hint').addEventListener('click', () => {
-            this.randBom.map((item) => {
-                console.log(item);
+            // Show gray blocks for all bombs (hint)
+            this.randBom.forEach(item => {
                 document.getElementById(item).classList.add('gray');
             });
 
-            document.querySelector('#hint').style.display = 'none';
+            // Disable movement during the hint
             this.memorizeInit = true;
-            setTimeout(() => {
-                this.memorizeInit = false;
-                document.getElementById(item).classList.remove('gray');
-            }, 1000);
+
+            // Hide the hint button (if needed)
+            document.querySelector('#hint').style.display = 'none';
+
+            // Store the current context (this)
+            const game = this;
+
+            // Remove gray after 1 second and enable movement again
+            setTimeout(function () {
+                // Remove the gray class from all bomb areas
+                game.randBom.forEach(item => {
+                    document.getElementById(item).classList.remove('gray');
+                });
+
+                // Re-enable player movement
+                game.memorizeInit = false;
+
+                // Optionally, show the hint button again after a timeout
+            }, 1000); // 1000 ms = 1 second
         });
+
+
 
         document.querySelector('#save-score').addEventListener('click', () => {
             const data = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];

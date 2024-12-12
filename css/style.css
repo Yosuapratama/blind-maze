@@ -207,6 +207,7 @@ table tr td, th {
     background: none;
     color: #373daf;
     font-size: 30px;
+    display: none;
 }
 
 #gameover-menu {
