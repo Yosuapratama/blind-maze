@@ -251,7 +251,7 @@ class Game {
                     document.getElementById(item).classList.remove('gray');
                 });
                 document.querySelector('#memorize').innerHTML = 'Move Time';
-                document.querySelector('#hint').style.display = 'block';
+                // document.querySelector('#hint').style.display = 'block';
 
                 this.memorizeInit = false;
                 // clearInterval(this);
