@@ -251,7 +251,7 @@ class Game {
                     document.getElementById(item).classList.remove('gray');
                 });
                 document.querySelector('#memorize').innerHTML = 'Move Time';
-                // document.querySelector('#hint').style.display = 'block';
+                document.querySelector('#hint').style.display = 'block';
 
                 this.memorizeInit = false;
                 // clearInterval(this);
@@ -425,8 +425,9 @@ class Game {
             this.memorizeInit = true;
 
             // Hide the hint button (if needed)
-            document.querySelector('#hint').style.display = 'none';
-
+            // document.querySelector('#hint').style.display = 'none !important';
+            // document.querySelector('#hint').style.setProperty('display', 'none', 'important');
+            // alert('woi');
             // Store the current context (this)
             const game = this;
 
@@ -467,6 +468,7 @@ class Game {
         setInterval(() => {
             if (this.memorizeTime <= 0) {
                 this.memorizeTime = 0;
+                // document.querySelector('#hint').style.display = 'block';
                 clearInterval(this);
             } else {
                 this.memorizeTime--;
